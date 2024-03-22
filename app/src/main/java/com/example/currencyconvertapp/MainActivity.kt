@@ -3,6 +3,8 @@ package com.example.currencyconvertapp
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import SpinnerAdapter
+import ResponseData
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             SpinnerAdapter.SpinnerItem(R.drawable.us, "USD"),
         )
 
-        val adapter = CustomSpinnerAdapter(this, spinnerItems)
+        val adapter = SpinnerAdapter(this, spinnerItems)
         binding.secondSpinner.adapter = adapter
         binding.firstSpinner.adapter = adapter
 
@@ -88,9 +90,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun convertNow() {
         val selectedItem1 =
-            binding.firstSpinner.selectedItem as CustomSpinnerAdapter.SpinnerItem
+            binding.firstSpinner.selectedItem as SpinnerAdapter.SpinnerItem
         val selectedItem2 =
-            binding.secondSpinner.selectedItem as CustomSpinnerAdapter.SpinnerItem
+            binding.secondSpinner.selectedItem as SpinnerAdapter.SpinnerItem
         val firstCurrency = selectedItem1.text.lowercase()
         val secondCurrency: String = selectedItem2.text.lowercase()
 

@@ -1,12 +1,14 @@
 package com.example.currencyconvertapp
 
+import ResponseData
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel {
+class MainViewModel: ViewModel() {
     val liveData = MutableLiveData<ResponseData>()
     val errorLiveData = MutableLiveData<String>()
 
