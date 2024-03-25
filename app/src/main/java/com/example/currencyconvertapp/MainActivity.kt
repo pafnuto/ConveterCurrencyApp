@@ -1,10 +1,10 @@
 package com.example.currencyconvertapp
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import SpinnerAdapter
 import ResponseData
+import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -27,20 +27,17 @@ class MainActivity : AppCompatActivity() {
                 convertNow()
                 hideKeyboard()
             }
-
             true
         }
 
-
         val spinnerItems = listOf(
-            SpinnerAdapter.SpinnerItem(R.drawable.pk, "PKR"),
-            SpinnerAdapter.SpinnerItem(R.drawable.sa, "SAR"),
-            SpinnerAdapter.SpinnerItem(R.drawable.ae, "AED"),
-            SpinnerAdapter.SpinnerItem(R.drawable.om, "OMR"),
-            SpinnerAdapter.SpinnerItem(R.drawable.gb, "GBP"),
-            SpinnerAdapter.SpinnerItem(R.drawable.eu, "EUR"),
-            SpinnerAdapter.SpinnerItem(R.drawable.us, "USD"),
-        )
+            SpinnerAdapter.SpinnerItem(R.drawable., "RUB"),
+            SpinnerAdapter.SpinnerItem(R.drawable., "USD"),
+            SpinnerAdapter.SpinnerItem(R.drawable., "EUR"),
+            SpinnerAdapter.SpinnerItem(R.drawable., "JPY"),
+            SpinnerAdapter.SpinnerItem(R.drawable., "CNY"),
+            SpinnerAdapter.SpinnerItem(R.drawable., "ILS"),
+            )
 
         val adapter = SpinnerAdapter(this, spinnerItems)
         binding.secondSpinner.adapter = adapter
@@ -52,15 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.liveData.observe(this) { curr ->
             hideProgress()
-
             val currencyList = arrayListOf<ResponseData>()
             currencyList.add(curr)
-
-
             val gotAmount = curr.conversionResult.toDouble()
             val enterAmount = binding.amount.text.toString()
-
-
             val totalAmount = (gotAmount * enterAmount.toDouble())
             binding.resultNum.text = totalAmount.toFloat().toString()
 
@@ -75,7 +67,6 @@ class MainActivity : AppCompatActivity() {
                 ) { dialog, which ->
                     dialog.dismiss()
                 }.create().show()
-
         }
 
     }
@@ -87,7 +78,6 @@ class MainActivity : AppCompatActivity() {
     private fun hideProgress() {
         binding.progress.visibility = View.GONE
     }
-
     private fun convertNow() {
         val selectedItem1 =
             binding.firstSpinner.selectedItem as SpinnerAdapter.SpinnerItem
