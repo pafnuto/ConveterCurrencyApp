@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         val spinnerItems = listOf(
-            SpinnerAdapter.SpinnerItem(R.drawable., "RUB"),
-            SpinnerAdapter.SpinnerItem(R.drawable., "USD"),
-            SpinnerAdapter.SpinnerItem(R.drawable., "EUR"),
-            SpinnerAdapter.SpinnerItem(R.drawable., "JPY"),
-            SpinnerAdapter.SpinnerItem(R.drawable., "CNY"),
-            SpinnerAdapter.SpinnerItem(R.drawable., "ILS"),
+            SpinnerAdapter.SpinnerItem(R.drawable.rub, "RUB"),
+            SpinnerAdapter.SpinnerItem(R.drawable.usa, "USD"),
+            SpinnerAdapter.SpinnerItem(R.drawable.eur, "EUR"),
+            SpinnerAdapter.SpinnerItem(R.drawable.jpy, "JPY"),
+            SpinnerAdapter.SpinnerItem(R.drawable.cny, "CNY"),
+            SpinnerAdapter.SpinnerItem(R.drawable.ils, "ILS"),
             )
 
         val adapter = SpinnerAdapter(this, spinnerItems)
